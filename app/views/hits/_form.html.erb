@@ -1,0 +1,59 @@
+<%= simple_form_for @hit, :html => { :class => 'form-horizontal' } do |f| %>
+
+<ul>
+    <% @hit.errors.full_messages.each do |msg| %>
+<div class="alert alert-error">
+      <%= msg %>
+</div>
+    <% end %>
+    </ul>
+
+  <fieldset>
+    <legend>Δημιουργία Αγγελίας</legend>
+    <div class="control-group">
+      <%= f.label :Περιγραφή, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :subject, :class => 'text_field',:placeholder => 'Σύντομη περιγραφή αγγελίας.'	 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :Αναλυτική_περιγραφή, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :body, :class => 'input-large',:placeholder => 'Αναλυτική περιγραφή αγγελίας.' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :Χαμηλότερη_δεκτή_προσφορά, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :bidmin, :class => 'text_area',:placeholder => 'Αναλυτική περιγραφή αγγελίας.' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :Υψηλότερη_δεκτή_προσφορά, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :bidmax, :class => 'text_area',:placeholder => 'Αναλυτική περιγραφή αγγελίας.' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :Βοηθητική_φωτογραφία, :class => 'control-label' %>
+      <div class="controls">
+    <%= f.file_field :image %>
+<p class="help-block">* Η φωτογραφία μπορει να βοηθήσει στην καλυτερη αξιολόγηση της αγγελίας και έτσι καλύτερη προσφορά.</p>
+    </div>
+    </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <div class="control-group">
+      <%= f.label :Κατηγορία, :class => 'control-label' %>
+        <%= f.association :category, :label => false %>
+      </div>
+    <div class="control-group">
+      <%= f.label :Νομός, :class => 'control-label' %>
+        <%= f.association :prefecture, :label => false %>
+      </div>
+    <div class="form-actions">
+      <%= f.submit 'Δημοσιέυση αγγελίας ', :class => 'btn btn-primary' %>
+      <%= link_to 'Άκυρο', hits_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,45 @@
+<h1>Προσφορά</h1>
+</br>
+<p>
+  <b>Μέγεθος προσφοράς</b><br>
+  <%= @bid.size %>
+</p>
+
+<p>
+  <b>Για την αγγελία</b><br>
+  <%= @bid.hit.subject %>
+</p>
+
+<p>
+  <b>Το μήνυμά σας</b><br>
+  <%= @bid.pm %>
+</p>
+<div class="form-actions">
+<%if @bid.accept == true%>
+<p>
+Η προσφορά έχει γίνει δεκτή!</br>
+Στοιχεία επικοιωνίας με τον πελάτη:
+<%=@bid.hit.user.email%>
+</p>
+<%else if @bid.active == false%>
+Η προσφορά είναι ανενεργή
+<%else%>Δεν υπάρχουν νέα για την προσφορά
+<%end%>
+<%end%>
+</div>
+
+<div class="form-actions">
+  <%= link_to 'Πίσω', url_for(:back), :class => 'btn'  %>
+<%if @bid.accept == true%>
+Η αγγελεία έχει γίνει δεκτή και δεν μπορείτε πλέον να την επεξεργαστείτε η να την διαγράψετε.
+
+<%if @bid.user_id == current_user.id %>
+<%if @bid.active == true%>
+  <%= link_to 'Επεξεργασία', edit_bid_path(@bid), :class => 'btn' %>
+  <%= link_to 'Διαγραφή', bid_path(@bid), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+<%else%>
+Η προσφορά αυτή είναι <u>Ανενεργή</u>
+<%end%>
+<%end%>
+<%end%>
+</div>

@@ -1,0 +1,70 @@
+</br>
+<h1>  <%= @hit.subject %>	</h1>
+</br>
+</br>
+
+
+
+<p>
+  <b>Θέμα</b><br>
+  <%= @hit.body %>
+</p>
+</br>
+<p>
+  <b>Εικόνα</b><br>
+   <td><%= image_tag @hit.image.url(:medium) %></td>
+</p>
+</br>
+<p>
+  <b>Χρήστης</b><br>
+
+  <%= @hit.user.name %>
+</p>
+
+<p>
+  <b>Κατηγορία</b><br>
+  <%= @hit.category.name %>
+</p>
+
+
+<p>
+  <b>Σύνολο Προσφορών </b><span class="badge badge-default">
+  <%= link_to @hit.bids.count, hit_bids_path(@hit) %>
+</span>
+</p>
+<%if current_user.id == @hit.user_id%>
+<%if @hit.haveaccept == true%>
+   Έχετε ήδη αποδεχθεί προσφορά για αυτή την αγγελία
+<%end%>
+<%else%>
+<%if @hit.haveaccept == true%>
+  Ο χρήστης της αγγελίας έχει ήδη αποδεχθεί μια προσφορά
+<%end%>
+<%end%>
+<div class="form-actions">
+<%if @hit.bids.count != 0 %>
+  <%= link_to "Δείτε τις προσφορές",hit_bids_path(@hit), :method => :get , :class => 'btn btn-success' %>
+<%else%>
+<%if @hit.user_id == current_user.id%>
+<a><h3>Hit!</h3>Εαν για πολύ καιρό δεν υπάρχουν προσφορές βελτιώστε το θέμα και το περιεχόμενο της αγγελίας..  </a>
+<%end%>
+<%end%>
+<%if @hit.bids.exists?(:user_id => current_user.id)%>
+Έχετε κάνει ήδη προσφορά για αυτή την αγγελία
+<%else%>
+<%if @hit.user_id != current_user.id%>
+<%if current_user.pro == true%>
+<%if @hit.haveaccept == false%>
+  <%= link_to "Κάντε μια προσφορά!",new_hit_bid_path(@hit), :method => :get , :class => 'btn btn-success' %>
+<%end%>
+<%end%>
+<%end%>
+<%end%>
+</div>
+<%if @hit.user_id == current_user.id%>
+<div class="form-actions">
+  <%= link_to 'Back', hits_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_hit_path(@hit), :class => 'btn' %>
+  <%= link_to 'Delete', hit_path(@hit), :method => 'delete', :confirm => 'Είστε σίγουρος?', :class => 'btn btn-danger' %>
+</div>
+<%end%>

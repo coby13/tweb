@@ -1,0 +1,70 @@
+<% if @bids.count  == 0 %>
+<h2>Προσφορές για την αγγελία:</h2><h3><%= @hit.subject%></h3>
+</br>
+<h3>Δεν υπάρχουν ακόμη προσφορές</h3>
+</br>
+<%if @hit.user_id == current_user.id%>
+<p></br></br></br></br></p>
+<%else%>
+<p>Για να κάνετε μια προσφορά πατήστε <%= link_to 'εδώ', new_hit_bid_path(@hit), :class => 'btn btn-info' %> και καταθέστε μια προσφορά για την αγγελία!</p>
+</br>
+</br>
+<%end%>
+<%else%>
+
+
+
+
+<h2>Προσφορές για την αγγελία:</h2><h3><%= @hit.subject%></h3>
+</br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Προσφορά</th>
+      <th>Μήνυμα</th>
+      <th>Κατατέθηκε</th>
+      <th>Χρήστης</th>
+<%if current_user.id == @hit.user_id %>
+      <th>Ενέργειες</th>
+<%end%>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @bids.each do |bid| %>
+      <tr>
+        <td><%= bid.id %></td>
+        <td><%= link_to bid.size, bid_path(bid) %></td>
+        <td><%= bid.pm %></td>
+        <td><%= bid.created_at %></td>
+        <td><%= bid.user.surname %></td>
+        <td>
+<%if  current_user.id == bid.hit.user_id%>
+     <% if bid.active == true%>
+           <%if bid.accept == true%>
+           <h2>Εχετε δεχτεί την προσφορά!</h2>
+           <%else%>
+          <%= link_to 'Αποδοχή', accept_bid_path(bid), :method => 'put', :confirm => 'Είστε σίγουρος για την αποδοχή της προσφοράς;Μέτα την αποδοχή της προσφοράς οι υπολοιπες προσφορές για την αγγελεία θα απενεργοποιηθούν' ,:class => 'btn btn-success' %>
+          <%end%>
+      <%else %>
+          Ανενεργή
+         </td>
+      </tr>
+<%end%>
+<% end %>
+<%end%>
+  </tbody>
+</table>
+
+<%= paginate @bids %>
+</br>
+  <%= link_to 'Πίσω', url_for(:back), :class => 'btn'  %>
+<%if @hit.bids.exists?(:user_id => current_user.id)%>
+Έχετε κάνει προσφορά για αυτή την αγγελία
+<%else%>
+<% if @hit.user_id != current_user.id %>
+<%= link_to 'Κατάθεση προσφοράς', new_hit_bid_path(@hit), :class => 'btn btn-primary' %>
+<%end%>
+<%end%>
+<%end%>

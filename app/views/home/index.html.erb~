@@ -1,0 +1,83 @@
+    <div class="hero-unit">
+    <h1>Hello, World!!!</h1>
+    <p>Γλυτώστε λευτά με λίγες και απλές κινήσεις...</p>
+    <p>
+    <a class="btn btn-primary btn-large">
+    Πώς Δουλεύει;
+    </a>
+    </p>
+    </div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Περιγραφή</th>
+      <th>Κατηγορία</th>
+      <th>Δημιουργήθηκε</th>
+      <th></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @hits.each do |hit| %>
+      <tr>
+        <td><%= link_to image_tag(hit.image.url(:thumb)), hit_path(hit) %></td>
+        <td><%= link_to hit.subject, hit_path(hit) %></td>
+        <td><%= hit.category.name %></td>
+        <td><%= time_ago_in_words(hit.created_at) %></td>
+        <td>
+
+   <% if hit.user == current_user%>
+
+          <%= link_to 'Επεξεργασία', edit_hit_path(hit), :class => 'btn ' %>
+          <%= link_to 'Διαγραφή', hit_path(hit), :method => :delete, :confirm => 'Are you sure?', :class => 'btn  btn-danger' %>
+   <%else%>
+         <%if user_signed_in?%>
+              <%if hit.bids.exists?(:user_id => current_user.id)%>
+                 Έχετε κάνει ήδη προφορά!
+              <%else%>
+          <%= link_to 'Χτύπα το!', new_hit_bid_path(hit), :method => :get , :class => 'btn btn-success' %>
+              <%end%>
+         <%end%>
+  <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+         <a> <%= link_to 'Καταχώρηση νέας αγγελίας', new_hit_path, :class => 'btn btn-primary btn-large' %></a>
+</br>
+</br>
+
+
+
+
+<ul class="thumbnails">
+<li class="span3">
+<div class="thumbnail">
+<img src="http://placehold.it/260x180" alt="">
+<h5>Thumbnail label</h5>
+<p>Thumbnail caption right here...</p>
+</div>
+</li>
+<ul class="thumbnails">
+<li class="span3">
+<div class="thumbnail">
+<img src="http://placehold.it/260x180" alt="">
+<h5>Thumbnail label</h5>
+<p>Thumbnail caption right here...</p>
+</div>
+</li>
+<ul class="thumbnails">
+<li class="span3">
+<div class="thumbnail">
+<img src="http://placehold.it/260x180" alt="">
+<h5>Thumbnail label</h5>
+<p>Thumbnail caption right here...</p>
+
+</div>
+</li>

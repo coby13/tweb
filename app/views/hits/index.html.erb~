@@ -1,0 +1,64 @@
+<h1>Αγγελίες</h1>
+</br>
+<%if @hits.count == 0%>
+Λυπούμαστε αλλά δεν υπάρχουν αγγελίες με τα κριτήρια που δώσατε,ξαναδοκιμάστε πατώντας   <%= link_to 'εδώ', url_for(:back), :class => 'btn'  %>
+</br></br></br></br></br></br></br></br></br></br></br>
+<%else%>
+<%=form_for @search do |f|%>
+<p><%= f.label :subject_contains, 'Αναζήτηση βάση κατηγορίας' %>
+<%= f.collection_select :category_id_equals, Category.all, :id, :name, :include_blank => 'Όλες' %>
+<%= f.label :subject_contains, 'Αναζήτηση βάση νομού' %>
+<%= f.collection_select :prefecture_id_equals, Prefecture.all, :id, :name, :include_blank => 'Όλοι' %>
+</p>
+<%= f.submit "Αναζήτηση", :class => 'btn-success' %>
+<%end%>
+
+<p>
+Ταξινόμηση κατά:
+<%= sort_link @search, :updated_at,"Πρόσφατα ενημερωμένες"%>|
+<%= sort_link @search, :created_at,"Καινούριες"%>|
+<%= sort_link @search, :bidmax,"Μέγιστη προσφορά"%>
+</p>
+</br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Περιγραφή</th>
+      <th>Κατηγορία</th>
+      <th>Ελάχιστη/Μέγιστη προσφορά</th>
+      <th>Προσφορές</th>
+      <th>Δημιουργήθηκε</th>
+      <th>Ενέργειες</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hits.each do |hit| %>
+      <tr>
+        <td><%= link_to hit.subject, hit_path(hit) %></td>
+        <td><%= hit.category.name %></td>
+        <td><%= hit.bidmin %> εώς <%=hit.bidmax%></td>
+        <td><%= link_to hit.bids.count, hit_bids_path(hit) %></td>
+        <td><%= time_ago_in_words(hit.created_at) %></td>
+        <td>
+          <% if hit.user == current_user%>
+           <%= link_to 'Επεξεργασία', edit_hit_path(hit), :class => 'btn btn-mini' %>
+           <%= link_to 'Διαγραφή', hit_path(hit), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+         <%else%>
+            <%if hit.bids.exists?(:user_id => current_user.id)%>
+              Έχετε κάνει ήδη προφορά!
+           <%else%>
+           <%if hit.haveaccept == true%>
+             Έχει ήδη αποδεχθεί προσφορά
+           <%else%>
+          <%= link_to 'Χτύπα το!', new_hit_bid_path(hit), :method => :get , :class => 'btn btn-success' %>
+         <%end%>
+         <%end%>
+         <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @hits %>
+
+    <% end %>

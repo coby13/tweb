@@ -1,0 +1,38 @@
+
+
+<p>Προσφορά για την αγγελία:<h2><%= @bid.hit.subject  %></h2>
+</p>
+
+
+<%= simple_form_for @bid , :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>Λεπτομέριες προσφοράς </legend>
+
+    <div class="control-group">
+      <%= f.label :Προσφορά, :class => 'control-label'  %>
+      <div class="controls">
+        <%= f.number_field :size, :class => 'number_field', :placeholder => @mobids%>
+<p class="help-block">Hit! Ο μέσος όρος των προσφορών που έχουν ήδη γίνει εμφανίζεται πριν κάνετε την προσφορά.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :Μήνυμα, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :pm, :class => 'text_field' %>
+<p class="help-block">Μαζί με την προσφορά καλό θα ήταν να στείλετε και ένα μήνυμα προς τον ενδιαφερόμενο (π.χ. Επαγγελματική προϋπηρεσία, πλάνο εργασίας κτλ.).</p>
+      </div>
+    </div>
+
+
+
+
+    <%= f.hidden_field :hit_id, :value => @bid.hit_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <div class="form-actions">
+      <%= f.submit 'Καταχώρηση προσφοράς', :class => 'btn btn-primary' %>
+      <%= link_to 'Άκυρο', "/mybids", :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

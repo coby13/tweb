@@ -1,0 +1,15 @@
+
+<ul class="nav">
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Έξοδος', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Είσοδος', new_user_session_path)  %>
+  </li>
+
+<% end %>
+
+</ul>

@@ -1,0 +1,31 @@
+<h2>Επεξεργασία λογαριασμού</h2>
+</br>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :Όνομα %>
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :Επίθετο %>
+  <%= f.text_field :surname %></div>
+
+  <div><%= f.label :Email %>
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :Κωδικός %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div><%= f.label :Επαλήθευση_κωδικού %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :Υπάρχων_κωδικός %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password %></div>
+
+  <div><%= f.submit "Υποβολή" %></div>
+<% end %>
+
+<h3>Ακύρωση του λογαριασμού μου</h3>
+
+<p>Δυσαρεστημένος? <%= link_to "Ακύρωση λογαριασμού", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+
+<%= link_to "Πίσω", :back %>

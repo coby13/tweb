@@ -1,0 +1,62 @@
+
+<% if @hits.count  == 0 %>
+<h1>Οι αγγελίες μου</h1>
+</br>
+<h3>Δεν έχετε καταχωρημένες αγγελίες</h3>
+</br>
+<p>Για να καταχωρήσετε μια αγγελία πατήστε <%= link_to 'εδώ', new_hit_path, :class => 'btn btn-info' %> για να μεταφερθείτε στην σελίδα καταχώρησης αγγελίας</p>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<%else%>
+<h1>Οι αγγελίες μου</h1>
+</br>
+<%=form_for @mysearch do |f|%>
+<%= f.label :subject_contains %>
+<%= f.text_field :subject_contains %>
+<%= f.label :subject_contains,'Με_ημερομηνία_υποβολής_μετά_από' %>
+<%= f.datetime_select :created_at_greater_than %>
+<%= f.label :subject_contains %>
+<%= f.collection_select :category_id_equals, Category.all, :id, :name, :include_blank => true %>
+<%= f.submit %>
+<%end%>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Περιγραφή</th>
+      <th>Κατηγορία αγγελίας</th>
+      <th>Δημιουργήθηκε</th>
+      <th>Τελευταία ανενέωση</th>
+      <th>Προσφορές αγγελίας</th>
+      <th>Ενέργειες</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @hits.each do |hit| %>
+      <tr>
+        <td><%= link_to hit.subject, hit_path(hit) %></td>
+        <td><%= hit.category.name %></td>
+        <td><%= hit.created_at %></td>
+        <td><%= time_ago_in_words(hit.updated_at)%></td>
+        <td><%= link_to hit.bids.count, hit_bids_path(hit) %></td>
+        <td>
+            <% if hit.user == current_user%>
+           <%= link_to 'Επεξεργασία', edit_hit_path(hit), :class => 'btn btn-mini' %>
+           <%= link_to 'Διαγραφή', hit_path(hit), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+         <%else%>
+          <%= link_to 'Χτύπα το!', new_hit_bid_path(hit), :method => :get , :class => 'btn btn-success' %>
+         <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%end%>
+</br>
+</br>

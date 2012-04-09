@@ -1,0 +1,4 @@
+class AddConfirmToUser < ActiveRecord::Migration
+  def change
+  end
+end

@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :surname, :pro
-  has_many :hits
-  has_many :bids, :foreign_key => "user_id"
+  has_many :hits, :dependent => :destroy
+
+  has_many :bids, :foreign_key => "user_id",:dependent => :destroy
+
 
 
 end

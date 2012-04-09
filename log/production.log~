@@ -433,3 +433,141 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/menu/_registration_items.html.erb (0.7ms)
   Rendered devise/menu/_login_items.html.erb (0.4ms)
 Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/myhits" for 127.0.0.1 at 2012-04-09 17:08:17 +0300
+Processing by HitsController#myhits as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:08:17 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 17:08:18 +0300
+Processing by HitsController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:08:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 17:08:20 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/myhits" for 127.0.0.1 at 2012-04-09 17:09:59 +0300
+Processing by HitsController#myhits as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:09:59 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:10:03 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJ2A0m8KscBGKCTBOaeAUrzyJaij8Gg6swcOqPET+OE=", "user"=>{"email"=>"eliastsirwnhs@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Είσοδος"}
+Completed 401 Unauthorized in 89ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJ2A0m8KscBGKCTBOaeAUrzyJaij8Gg6swcOqPET+OE=", "user"=>{"email"=>"eliastsirwnhs@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Είσοδος"}
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 124ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-04-09 17:10:08 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJ2A0m8KscBGKCTBOaeAUrzyJaij8Gg6swcOqPET+OE=", "user"=>{"email"=>"eliastsirwnhs@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Redirected to http://localhost:3000/myhits
+Completed 302 Found in 432ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/myhits" for 127.0.0.1 at 2012-04-09 17:10:09 +0300
+Processing by HitsController#myhits as HTML
+  Rendered hits/myhits.html.erb within layouts/application (5.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 17:10:12 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 18:22:30 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 18:22:32 +0300
+Processing by HitsController#index as HTML
+  Rendered hits/index.html.erb within layouts/application (4.8ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (61.3ms)
+Completed 200 OK in 75ms (Views: 71.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 18:22:48 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 18:22:54 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 18:22:58 +0300
+Processing by HitsController#index as HTML
+  Rendered hits/index.html.erb within layouts/application (1.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 18:23:00 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms)

@@ -69,7 +69,7 @@ Tweb::Application.configure do
  :enable_starttls_auto => true,
  :address            => 'smtp.gmail.com',
  :port               => 587,
- :tls                => true,
+ :tls                => false,
  :domain             => 'gmail.com',
  :authentication     => :plain,
  :user_name          => 'eliastsirwnhs@gmail.com',

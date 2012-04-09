@@ -56,7 +56,16 @@ render :nothing => true, :status => 200
 end
 
 def subscription_state_change
-render :nothing => true, :status => 200
+  begin
+    account = Account.find(@subscription.customer.reference)
+    account.subscription_state = @subscription.state
+    account.subscription_billing_date = @subscription.current_period_ends_at
+    account.save(:validate => false)
+    render :nothing => true, :status => 200
+  rescue Exception => e
+    notify_hoptoad(e) #If you use hoptoad...
+    render :nothing => true, :status => 422 and return
+  end
 end
 
 def subscription_product_change

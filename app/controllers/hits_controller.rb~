@@ -13,8 +13,8 @@ before_filter :authenticate_user!
   end
 
  def search
-   @search = Hit.search(params[:search])
-    @hits = @search.page(params[:page])
+   @asearch = Hit.search(params[:search])
+    @hits = @asearch.page(params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @hits }

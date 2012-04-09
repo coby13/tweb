@@ -1,0 +1,435 @@
+Migrating to CreateHits (20120320121613)
+Migrating to DeviseCreateUsers (20120320121800)
+Migrating to CreateCategories (20120320132624)
+Migrating to CreateBids (20120321091421)
+Migrating to AddColumnPmtoBid (20120322122321)
+Migrating to AddImageColumnsToHit (20120323084530)
+Migrating to AddBidmaxColumnToHit (20120326104826)
+Migrating to AddBidminColumnToHit (20120326104858)
+Migrating to SetDefaultValuesToHitBids (20120326110018)
+Migrating to SetDefaultValuesToHitBids1 (20120326110347)
+Migrating to AddAcceptColumnToBids (20120402142528)
+Migrating to AddActiveColumnToBids (20120403120828)
+Migrating to AddProColumnToUser (20120404100007)
+Migrating to AddAcceptColumnToHits (20120404110822)
+Migrating to CreateNomos (20120405125202)
+Migrating to CreatePrefectures (20120405125815)
+Migrating to AddPrefectureColumnToHits (20120405141806)
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 16:57:27 +0300
+Processing by HitsController#index as HTML
+Completed 401 Unauthorized in 116ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 16:57:28 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (2.3ms)
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (113.4ms)
+Completed 500 Internal Server Error in 469ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:32 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:36 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:37 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:37 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:37 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:57:38 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:28 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:29 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:29 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:29 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:29 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:30 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:30 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 16:58:30 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__991550963_93712470'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 17:00:55 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (72.6ms)
+Compiled bids.css  (1093ms)  (pid 5352)
+Completed 500 Internal Server Error in 1544ms
+
+ActionView::Template::Error (Operation not permitted - /home/casper/tweb/tmp/cache/assets/D2A/7C0/sprockets%2Fab3dbe383b34416431ed6a2a11a7992b):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__774583168_94667080'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 17:00:59 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 505ms
+
+ActionView::Template::Error ('twitter/bootstrap/bootstrap.less' wasn't found.
+
+  (in /home/casper/tweb/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+    12:     <![endif]-->
+    13: 
+    14:     <!-- Le styles -->
+    15:     <%= stylesheet_link_tag "application", :media => "all" %>
+    16: 
+    17:     <!-- Le fav and touch icons -->
+    18:     <link href="images/favicon.ico" rel="shortcut icon">
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__774583168_94667080'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 17:03:42 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (122.6ms)
+Compiled bootstrap_and_overrides.css  (1285ms)  (pid 5371)
+Compiled hits.css  (1176ms)  (pid 5371)
+Compiled home.css  (1ms)  (pid 5371)
+Compiled prefectures.css  (3ms)  (pid 5371)
+Compiled scaffolds.css  (11ms)  (pid 5371)
+Compiled application.css  (2554ms)  (pid 5371)
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Compiled jquery.js  (2ms)  (pid 5371)
+Compiled jquery_ujs.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 5371)
+Compiled twitter/bootstrap.js  (69ms)  (pid 5371)
+Compiled bids.js  (290ms)  (pid 5371)
+Completed 500 Internal Server Error in 3621ms
+
+ActionView::Template::Error (Operation not permitted - /home/casper/tweb/tmp/cache/assets/C55/180/sprockets%2F1336e5b14a79ce6d7062c07547294772):
+    122:     <!-- Le javascript
+    123:     ================================================== -->
+    124:     <!-- Placed at the end of the document so the pages load faster -->
+    125:     <%= javascript_include_tag "application" %>
+    126: 
+    127:   </body>
+    128: </html>
+  app/views/layouts/application.html.erb:125:in `_app_views_layouts_application_html_erb___214900716_88118530'
+  app/controllers/home_controller.rb:5:in `index'
+
+
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 17:06:03 +0300
+Processing by HitsController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:06:03 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (2.2ms)
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Compiled bootstrap.js  (10ms)  (pid 5371)
+Compiled hits.js  (0ms)  (pid 5371)
+Compiled home.js  (0ms)  (pid 5371)
+Compiled prefectures.js  (1ms)  (pid 5371)
+Compiled application.js  (102ms)  (pid 5371)
+Completed 200 OK in 3818ms (Views: 3793.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application-ba238e4665060e1053910c2c518ba618.css" for 127.0.0.1 at 2012-04-09 17:06:07 +0300
+Served asset /application-ba238e4665060e1053910c2c518ba618.css - 200 OK (0ms)
+
+
+Started GET "/assets/application-bb0b11295e0af4b7b26d8d288518aa1e.js" for 127.0.0.1 at 2012-04-09 17:06:07 +0300
+Served asset /application-bb0b11295e0af4b7b26d8d288518aa1e.js - 200 OK (0ms)
+
+
+Started GET "/hits" for 127.0.0.1 at 2012-04-09 17:06:12 +0300
+Processing by HitsController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-04-09 17:06:12 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.7ms)
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)

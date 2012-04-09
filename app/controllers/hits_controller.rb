@@ -1,4 +1,4 @@
-+class HitsController < ApplicationController
+class HitsController < ApplicationController
 before_filter :authenticate_user!
 
   # GET /hits

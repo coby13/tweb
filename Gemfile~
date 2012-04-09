@@ -11,7 +11,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem "paperclip"
 gem 'meta_search'
-gem 'chargify-api-ares'
+gem 'chargify_api_ares'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -14,14 +14,13 @@
 ActiveRecord::Schema.define(:version => 20120405141806) do
 
   create_table "bids", :force => true do |t|
-    t.decimal  "size",                      :precision => 10, :scale => 0
+    t.decimal  "size",       :precision => 10, :scale => 0
     t.integer  "hit_id"
     t.integer  "user_id"
-    t.datetime "created_at",                                                                 :null => false
-    t.datetime "updated_at",                                                                 :null => false
-    t.string   "pm",         :limit => 200
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
     t.boolean  "accept"
-    t.boolean  "active",                                                   :default => true
+    t.boolean  "active",                                    :default => false
   end
 
   create_table "categories", :force => true do |t|

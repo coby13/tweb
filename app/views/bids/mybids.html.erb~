@@ -1,3 +1,56 @@
+<%if current_user.pro == true%>
+<h1>Οι προσφορές μου</h1>
+
+</br>
+</br>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Κατάσταση</th>
+      <th>Προσφορά</th>
+      <th>Δημιουργήθηκε</th>
+      <th>Αγγελία</th>
+      <th>Ενέργειες</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @mybidstohits.each do |bid| %>
+      <tr>
+<%if bid.accept == true%>
+        <td><img src="http://placehold.it/30x30" alt=""></td>
+<%else%>
+<td><img src="http://placehold.it/35x35" alt=""></td>
+<%end%>
+        <td><%= link_to bid.size, bid_path(bid) %></td>
+        <td><%= time_ago_in_words(bid.created_at) %> ago</td>
+        <td><%= link_to bid.hit.subject, hit_path(bid.hit) %></td>
+        <td><%if bid.active == true%>
+          <%= link_to 'Αλλαγή', edit_bid_path(bid), :class => 'btn btn-mini' %>
+          <%= link_to 'Διαγραφή', bid_path(bid), :method => :delete,  :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+            <%else%>
+            Ανενεργή
+            <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @bids %>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
 <% if @userbids  == 0 %>
 <h1>Προσφορές</h1>
 </br>
@@ -18,7 +71,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Α/Α</th>
+      <th>Κατάσταση</th>
       <th>Προσφορά</th>
       <th>Δημιουργήθηκε</th>
       <th>Αγγελία</th>

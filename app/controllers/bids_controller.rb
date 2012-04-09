@@ -19,7 +19,6 @@ before_filter :authenticate_user!
 def mybids
     @bids = Bid.where("user_id = ?", current_user.id).page(params[:page])
     @userbids = @bids.count
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @hits }

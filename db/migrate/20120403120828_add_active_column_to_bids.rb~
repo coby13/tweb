@@ -1,0 +1,6 @@
+class AddActiveColumnToBids < ActiveRecord::Migration
+  def change
+    add_column :bids, :active, :boolean
+
+  end
+end

@@ -1,0 +1,8 @@
+class SetDefaultValuesToHitBids1 < ActiveRecord::Migration
+  def up
+    change_column :hits,:integer, :bidmin, :default => 0
+  end
+
+  def down
+  end
+end

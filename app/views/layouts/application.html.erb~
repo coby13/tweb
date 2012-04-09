@@ -48,6 +48,7 @@
         </div>
       </div>
     </div>
+    <div class="container">
    <div class="span9">
 <% if flash[:alert] %>
     <p class="alert alert-error"><%= flash[:alert] %></p>
@@ -56,9 +57,6 @@
     <p class="alert alert-success"><%= flash[:notice] %></p>
   <% end %>
   </div>
-
-
-    <div class="container">
       <div class="content">
         <div class="row">
            <div class="span9">
@@ -88,7 +86,12 @@ DEn yparxei tipota
 <img src="http://placehold.it/260x180" alt="">
 <h5>Thumbnail label</h5>
 <p>Thumbnail caption right here...</p>
-
+<%= ad_unit(:square, "8254978182",{:type =>'image' ,
+:theme => {
+:link => "#fff",
+:background => "#000"
+}
+}) %>
 </div>
 </li>
 

@@ -1,0 +1,8 @@
+class AddAcceptColumnToHits < ActiveRecord::Migration
+  def change
+    add_column :hits, :haveaccept, :boolean
+
+    add_column :hits, :default, :false
+
+  end
+end

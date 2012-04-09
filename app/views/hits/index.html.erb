@@ -3,6 +3,7 @@
 <%if @hits.count == 0%>
 Λυπούμαστε αλλά δεν υπάρχουν αγγελίες με τα κριτήρια που δώσατε,ξαναδοκιμάστε πατώντας   <%= link_to 'εδώ', url_for(:back), :class => 'btn'  %>
 </br></br></br></br></br></br></br></br></br></br></br>
+
 <%else%>
 <%=form_for @search do |f|%>
 <%= f.label :subject_contains, 'Αναζήτηση βάση κατηγορίας' %>

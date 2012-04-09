@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  size: 9.99
+  hit_id: 1
+  user_id: 1
+
+two:
+  size: 9.99
+  hit_id: 1
+  user_id: 1

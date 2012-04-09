@@ -1,5 +1,5 @@
 <%if current_user.pro == true%>
-<%if current_pro.id == @bid.hit.user_id%>
+<%if current_user.id == @bid.hit.user_id%>
 </br>
 </br>
 </br>
@@ -11,5 +11,7 @@
 <%= render :partial => 'form' %>
 <%end%>
 <%else%>
+</br></br></br>
 Δεν έχετε το δικαίωμα να κάνετε προσφορές.Για να μπορείτε να κάνετε προσφορές αναβαθμίστε τον λογαριασμό σας και λάβετε δικαιώματα pro για ένα μήνα δωρεάν!
+</br></br></br>
 <%end%>

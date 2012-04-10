@@ -62,7 +62,7 @@ Tweb::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://ec2-107-21-225-3.compute-1.amazonaws.com' }
   config.active_support.deprecation = :log
 
  config.action_mailer.smtp_settings ={

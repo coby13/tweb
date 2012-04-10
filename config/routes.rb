@@ -35,6 +35,8 @@ namespace 'chargify' do
  match '/hooks' => "hooks#dispatch_handler", :via => "post"
  end
 
+match 'contact' => 'contact#new', :as => 'contact', :via => :get
+match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

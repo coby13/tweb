@@ -37,6 +37,7 @@
                 <li><%= link_to "Οι αγγελίες μου", "/myhits"  %></li>
                 <li><%= link_to "Οι προσφορές μου", "/mybids"  %></li>
                 <li><%= link_to "Αναζήτηση", "/search"  %></li>
+                <li><%= link_to "Επικοινωνία", "/contact"  %></li>
             </ul>
             <ul class="pull-right">
 
@@ -67,13 +68,13 @@
                 <h3>Sidebar</h3>
 <%if user_signed_in?%>
                 <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                    <li><%= link_to "My Hits", "/hits/myhits"  %></li>
-                    <li><%= link_to "My Bids", "/bids/mybids"  %></li>
-                    <li><%= link_to "Link3", "/path3"  %></li>
+                  <li class="nav-header">Το μενού μου</li>
+                    <li><%= link_to "Αγγελίες μου", "/myhits"  %></li>
+                    <li><%= link_to "Προσφορές μου", "/mybids"  %></li>
+                    <li><%= link_to "Επικοινωνία", "/contact"  %></li>
                 </ul>
 <%else%>
-DEn yparxei tipota
+Το tweb είναι το απόλυτο εργαλίο για επαγγελματίες αλλά και ιδιώτες.Αν είσαι επαγγελματίας μπορείς να αυξήσεις κατακόρυφα το εισόδημα σου βρίσκοντας δουλειές που προσφέρονται καθημερινά από ιδιώτες.Αν είσαι ιδιώτης μπορείς να εξασφαλίσεις την καλύτερη τιμή αφού επαγγελματίες θα προσέξουν την αγγελία σου και θα κάνουν προσφορά!
 <%end%>
               </div><!--/.well -->
 

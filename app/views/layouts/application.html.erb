@@ -34,8 +34,6 @@
           <div class="container nav-collapse ">
             <ul class="nav">
                 <li><%= link_to "Αγγελίες", "/hits"  %></li>
-                <li><%= link_to "Οι αγγελίες μου", "/myhits"  %></li>
-                <li><%= link_to "Οι προσφορές μου", "/mybids"  %></li>
                 <li><%= link_to "Αναζήτηση", "/search"  %></li>
                 <li><%= link_to "Επικοινωνία", "/contact"  %></li>
             </ul>
@@ -68,7 +66,7 @@
                 <h3>Sidebar</h3>
 <%if user_signed_in?%>
                 <ul class="nav nav-list">
-                  <li class="nav-header">Το μενού μου</li>
+                  <li class="nav-header">Το μενου μου</li>
                     <li><%= link_to "Αγγελίες μου", "/myhits"  %></li>
                     <li><%= link_to "Προσφορές μου", "/mybids"  %></li>
                     <li><%= link_to "Επικοινωνία", "/contact"  %></li>

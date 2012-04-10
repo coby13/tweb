@@ -1,26 +1,39 @@
+
+<div class="well sidebar-nav">
+<h3>Συμπληρώστε την φόρμα επικοινωνίας και θα σας απανησουμε το συντομότερο δυνατό!</h3>
+</br>
+
 <%= form_for @message, :url => contact_path do |form| %>
   <fieldset class="fields">
-    <div class="field">
-      <%= form.label :name %>
+    <div class="control-group">
+      <%= form.label :Όνομα, :class => 'control-label'  %>
+      <div class="controls">
       <%= form.text_field :name %>
     </div>
-
-    <div class="field">
-      <%= form.label :email %>
+   </div>
+    <div class="control-group">
+      <%= form.label :email, :class => 'control-label'  %>
+      <div class="controls">
       <%= form.text_field :email %>
+   </div>
+
     </div>
-    <div class="field">
-      <%= form.label :subject %>
+    <div class="control-group">
+      <%= form.label :Τίτλος, :class => 'control-label'  %>
+      <div class="controls">
       <%= form.text_field :subject %>
     </div>
-
-    <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body %>
+   </div>
+    <div class="control-group">
+      <%= form.label :Μήνυμα, :class => 'control-label'  %>
+      <div class="controls">
+      <%= form.text_area :body, :class => 'input-small' %>
     </div>
-  </fieldset>
+   </div>
+    </fieldset>
 
   <fieldset class="actions">
-    <%= form.submit "Send" %>
+    <%= form.submit "Αποστολή",:class => 'btn btn-primary btn-large' %>
   </fieldset>
 <% end %>
+</div>

@@ -56,6 +56,14 @@ max-width:400px;
 .input-small{
 min-height:150px;
 max-height:200px;
-min-width:150px;
+min-width:250px;
 max-width:400px;
+}
+
+
+.footer > a{
+
+color: #000fff;
+text-decoration: none;
+
 }

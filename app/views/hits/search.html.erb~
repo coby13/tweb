@@ -5,7 +5,7 @@
 <%= f.label :subject_contains, 'Να περιέχει στο θέμα' %>
 <%= f.text_field :subject_contains %>
 <%= f.label :subject_contains,'Με ημερομηνία υποβολής μετά από' %>
-<%= f.month_select :created_at_greater_than %>
+<%= f.datetime_select :created_at_greater_than %>
   <p>
     <%= f.label :bidmax_gte, "Price ranges from" %>
     <%= f.text_field :bidmax_gte, :size => 8 %>

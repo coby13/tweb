@@ -15,5 +15,5 @@
 <%= f.label :subject_contains, 'Κατηγορία' %>
 <%= f.collection_select :category_id_equals, Category.all, :id, :name, :include_blank => true %>
 </br>
-<%= f.submit "Αναζήτηση" %>
+<%= f.submit "Αναζήτηση", :class => 'btn btn-success' %>
 <%end%>

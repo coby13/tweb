@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409154155) do
+ActiveRecord::Schema.define(:version => 20120417131012) do
 
   create_table "bids", :force => true do |t|
     t.decimal  "size",       :precision => 10, :scale => 0
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120409154155) do
     t.datetime "updated_at",                                                   :null => false
     t.boolean  "accept"
     t.boolean  "active",                                    :default => false
+    t.string   "pm"
   end
 
   create_table "categories", :force => true do |t|

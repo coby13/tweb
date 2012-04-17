@@ -44,7 +44,7 @@ def mybids
   def new
 
 @bid = Bid.new(:hit_id => params[:hit_id])
-@mobids = @bid.hit.bids.average('size')
+@mybids = @bid.hit.bids.average('size')
 @currentbids = @bid.hit.bids
     respond_to do |format|
       format.html # new.html.erb

@@ -31,7 +31,7 @@ color: #ffffff;
 text-color: #ffffff;
 }
 
-.nav-list .nav{
+.well .sidebar-nav{
 background-color: #ff00ff;
 }
 

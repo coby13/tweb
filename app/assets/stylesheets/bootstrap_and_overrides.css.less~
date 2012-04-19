@@ -31,6 +31,10 @@ color: #ffffff;
 text-color: #ffffff;
 }
 
+.nav-list .nav{
+background-color: #ff00ff;
+}
+
 
 .navbar .nav > li > a {
   float: none;
